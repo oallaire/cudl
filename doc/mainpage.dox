@@ -1,0 +1,32 @@
+/**
+ * @mainpage cudl Index Page
+ * @section intro_sec Introduction
+ * This library is meant to make units more usable in a C code base. It takes inspiration from the C++ user
+ * defined literals. Since we are in C, we have a lot more limitations. Still, this library allows to write clear unit
+ * manipulations code with compile time checks.
+ *
+ * @code
+#include <cudl.h>
+#include <cstdint>
+
+CUDL_ADD_UNIT(_v, uint32_t)
+CUDL_ADD_UNIT(_mv, uint32_t)
+
+CUDL_ADD_CONVERSION_FACTOR(_v, _mv, 1000)
+CUDL_ADD_CONVERSION_FRACTION_FACTOR(_mv, _v, 1, 1000)
+
+// This code will compile and convert from volts to milli-volts.
+void foo(void) {
+    _v_t volts = _v(10);
+    _mv_t mvolts = from_v_to_mv(volts);
+}
+
+// This code will not compile, thus adding a unit checking system.
+void bar(void) {
+    _v_t volts = _v(10);
+    _mv_t mvolts = volts;
+}
+ * @endcode
+ * @section doc_sec Documentation
+ * See cudl.h
+*/

@@ -1,3 +1,10 @@
+/**
+ * @file cudl.h
+ * @author Olivier Allaire
+ * @brief This library is meant to make units more usable in a C code base. It takes inspiration from the C++ user
+ * defined literals. See the documentation for usage.
+ */
+
 #ifndef CUDL_H
 #define CUDL_H
 
@@ -10,6 +17,16 @@ extern "C"
 #define __CUDLE_NOP(_x) _x // NOLINT(bugprone-reserved-identifier)
 #define __CUDLE_FACTOR(_factor) (_x // NOLINT(bugprone-reserved-identifier)
 
+/**
+ * @brief Function to add a unit.
+ * @param _name The name of the unit. This will be used to define the unit type and the init function.
+ * @code
+ADD_2(_x) (_x + 2)
+CUDL_ADD_UNIT_WITH_OP(my_unit, int, ADD_2)
+// This type and function will now exist
+my_unit_t foo = my_unit(5); // Foo will be equal to 7
+ * @endcode
+ */
 #define CUDL_ADD_UNIT_WITH_OP(_name, _type, _op)              \
 typedef struct _name##_s { _type value; } __CUDLE_UT(_name);  \
 static inline __CUDLE_UT(_name) _name(_type input_value) {    \

@@ -7,7 +7,7 @@
  *
  * @code
 #include <cudl.h>
-#include <cstdint>
+#include <stdint.h>
 
 CUDL_ADD_UNIT(_v, uint32_t)
 CUDL_ADD_UNIT(_mv, uint32_t)

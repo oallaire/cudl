@@ -20,3 +20,11 @@ TEST(test_cudl, whenUsingVolts_canConvertToMillivolts)
     _mv_t mvolts = from_v_to_mv(volts);
     ASSERT_EQ(CUDL_GET(mvolts), 10000);
 }
+
+TEST(test_cudl, whenUsingMillivolts_canConvertToVolts)
+{
+    _mv_t mvolts = _mv(5000);
+    
+    _v_t volts = from_mv_to_v(mvolts);
+    ASSERT_EQ(CUDL_GET(volts), 5);
+}

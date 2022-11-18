@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['cudl_2eh_0',['cudl.h',['../cudl_8h.html',1,'']]],
-  ['cudl_5fadd_5funit_5fwith_5fop_1',['CUDL_ADD_UNIT_WITH_OP',['../cudl_8h.html#aae7c70a3211ee874af29223e08d7f437',1,'cudl.h']]],
-  ['cudl_20index_20page_2',['cudl Index Page',['../index.html',1,'']]]
+  ['_5f_5fcudle_5fnop_0',['__CUDLE_NOP',['../cudl_8h.html#a63d4072e7ca0bd07e0840c13d60fbcf1',1,'cudl.h']]],
+  ['_5f_5fcudle_5fut_1',['__CUDLE_UT',['../cudl_8h.html#a810bb3b68c462b41168617371389238c',1,'cudl.h']]]
 ];

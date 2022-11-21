@@ -9,22 +9,22 @@
 #include <cudl.h>
 #include <stdint.h>
 
-CUDL_ADD_UNIT(_v, uint32_t)
-CUDL_ADD_UNIT(_mv, uint32_t)
+CUDL_ADD_UNIT(v, uint32_t)
+CUDL_ADD_UNIT(mv, uint32_t)
 
-CUDL_ADD_CONVERSION_FACTOR(_v, _mv, 1000)
-CUDL_ADD_CONVERSION_FRACTION_FACTOR(_mv, _v, 1, 1000)
+CUDL_ADD_CONVERSION_FACTOR(v, mv, 1000)
+CUDL_ADD_CONVERSION_FRACTION_FACTOR(mv, v, 1, 1000)
 
 // This code will compile and convert from volts to milli-volts.
 void foo(void) {
-    _v_t volts = _v(10);
-    _mv_t mvolts = from_v_to_mv(volts);
+    cudl_v_t volts = cudl_v(10);
+    cudl_mv_t mvolts = cudl_from_v_to_mv(volts);
 }
 
 // This code will not compile, thus adding a unit checking system.
 void bar(void) {
-    _v_t volts = _v(10);
-    _mv_t mvolts = volts;
+    cudl_v_t volts = cudl_v(10);
+    cudl_mv_t mvolts = volts;
 }
  * @endcode
  * @section doc_sec Documentation

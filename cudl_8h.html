@@ -79,18 +79,34 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a810bb3b68c462b41168617371389238c"><td class="memItemLeft" align="right" valign="top"><a id="a810bb3b68c462b41168617371389238c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#a810bb3b68c462b41168617371389238c">__CUDLE_UT</a>(_name)&#160;&#160;&#160;_name##_t</td></tr>
-<tr class="memdesc:a810bb3b68c462b41168617371389238c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility macro meant to easily rebuild the type name associated to the unit name. For internal use only. <br /></td></tr>
-<tr class="separator:a810bb3b68c462b41168617371389238c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63d4072e7ca0bd07e0840c13d60fbcf1"><td class="memItemLeft" align="right" valign="top"><a id="a63d4072e7ca0bd07e0840c13d60fbcf1"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#a63d4072e7ca0bd07e0840c13d60fbcf1">__CUDLE_NOP</a>(_x)&#160;&#160;&#160;_x</td></tr>
-<tr class="memdesc:a63d4072e7ca0bd07e0840c13d60fbcf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility macro meant to allow reuse of other macros that requires an op. For internal use only. <br /></td></tr>
-<tr class="separator:a63d4072e7ca0bd07e0840c13d60fbcf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a936d1e1167db6b3f45b8febfad11f1db"><td class="memItemLeft" align="right" valign="top"><a id="a936d1e1167db6b3f45b8febfad11f1db"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#a936d1e1167db6b3f45b8febfad11f1db">CUDL_PREFIX</a>&#160;&#160;&#160;cudl_</td></tr>
+<tr class="memdesc:a936d1e1167db6b3f45b8febfad11f1db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prefix to prevent name clashes. If it is not a problem to the user, it can be redefined or set to an empty value. <br /></td></tr>
+<tr class="separator:a936d1e1167db6b3f45b8febfad11f1db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dcc23cc2bae177402106a3d399ed3ce"><td class="memItemLeft" align="right" valign="top"><a id="a0dcc23cc2bae177402106a3d399ed3ce"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#a0dcc23cc2bae177402106a3d399ed3ce">__CUDL_L2STR</a>(_p,  _s)&#160;&#160;&#160;_p##_s</td></tr>
+<tr class="memdesc:a0dcc23cc2bae177402106a3d399ed3ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Level 2 stringification macro. For internal use only. <br /></td></tr>
+<tr class="separator:a0dcc23cc2bae177402106a3d399ed3ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa24251ce4017c8633f5f559ffd0f66fa"><td class="memItemLeft" align="right" valign="top"><a id="aa24251ce4017c8633f5f559ffd0f66fa"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#aa24251ce4017c8633f5f559ffd0f66fa">__CUDL_L1STR</a>(_p,  _s)&#160;&#160;&#160;<a class="el" href="cudl_8h.html#a0dcc23cc2bae177402106a3d399ed3ce">__CUDL_L2STR</a>(_p, _s)</td></tr>
+<tr class="memdesc:aa24251ce4017c8633f5f559ffd0f66fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Level 1 stringification macro. For internal use only. <br /></td></tr>
+<tr class="separator:aa24251ce4017c8633f5f559ffd0f66fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61a4aac603a2f8de9be5f581f63ae176"><td class="memItemLeft" align="right" valign="top"><a id="a61a4aac603a2f8de9be5f581f63ae176"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#a61a4aac603a2f8de9be5f581f63ae176">__CUDL_AP</a>(_s)&#160;&#160;&#160;<a class="el" href="cudl_8h.html#aa24251ce4017c8633f5f559ffd0f66fa">__CUDL_L1STR</a>(<a class="el" href="cudl_8h.html#a936d1e1167db6b3f45b8febfad11f1db">CUDL_PREFIX</a>, _s)</td></tr>
+<tr class="memdesc:a61a4aac603a2f8de9be5f581f63ae176"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility macro to append CUDL_PREFIX at the beginning of the given token. For internal use only. <br /></td></tr>
+<tr class="separator:a61a4aac603a2f8de9be5f581f63ae176"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59661ca75f8ca4b147b1fc96c01abdc2"><td class="memItemLeft" align="right" valign="top"><a id="a59661ca75f8ca4b147b1fc96c01abdc2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#a59661ca75f8ca4b147b1fc96c01abdc2">__CUDL_UT</a>(_name)&#160;&#160;&#160;<a class="el" href="cudl_8h.html#aa24251ce4017c8633f5f559ffd0f66fa">__CUDL_L1STR</a>(<a class="el" href="cudl_8h.html#a61a4aac603a2f8de9be5f581f63ae176">__CUDL_AP</a>(_name), _t)</td></tr>
+<tr class="memdesc:a59661ca75f8ca4b147b1fc96c01abdc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility macro meant to easily rebuild the type name associated to the unit name. For internal use only. <br /></td></tr>
+<tr class="separator:a59661ca75f8ca4b147b1fc96c01abdc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dc8711681148cf7af41e9f9922b6c97"><td class="memItemLeft" align="right" valign="top"><a id="a6dc8711681148cf7af41e9f9922b6c97"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#a6dc8711681148cf7af41e9f9922b6c97">__CUDL_NOP</a>(_x)&#160;&#160;&#160;_x</td></tr>
+<tr class="memdesc:a6dc8711681148cf7af41e9f9922b6c97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility macro meant to allow reuse of other macros that requires an op. For internal use only. <br /></td></tr>
+<tr class="separator:a6dc8711681148cf7af41e9f9922b6c97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae7c70a3211ee874af29223e08d7f437"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#aae7c70a3211ee874af29223e08d7f437">CUDL_ADD_UNIT_WITH_OP</a>(_name,  _type,  _op)</td></tr>
 <tr class="memdesc:aae7c70a3211ee874af29223e08d7f437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to add a unit.  <a href="cudl_8h.html#aae7c70a3211ee874af29223e08d7f437">More...</a><br /></td></tr>
 <tr class="separator:aae7c70a3211ee874af29223e08d7f437"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35c115838fe3056993f9f61785499503"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#a35c115838fe3056993f9f61785499503">CUDL_ADD_UNIT</a>(_name,  _type)&#160;&#160;&#160;<a class="el" href="cudl_8h.html#aae7c70a3211ee874af29223e08d7f437">CUDL_ADD_UNIT_WITH_OP</a>(_name, _type, <a class="el" href="cudl_8h.html#a63d4072e7ca0bd07e0840c13d60fbcf1">__CUDLE_NOP</a>)</td></tr>
+<tr class="memitem:a35c115838fe3056993f9f61785499503"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#a35c115838fe3056993f9f61785499503">CUDL_ADD_UNIT</a>(_name,  _type)&#160;&#160;&#160;<a class="el" href="cudl_8h.html#aae7c70a3211ee874af29223e08d7f437">CUDL_ADD_UNIT_WITH_OP</a>(_name, _type, <a class="el" href="cudl_8h.html#a6dc8711681148cf7af41e9f9922b6c97">__CUDL_NOP</a>)</td></tr>
 <tr class="memdesc:a35c115838fe3056993f9f61785499503"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to add a unit.  <a href="cudl_8h.html#a35c115838fe3056993f9f61785499503">More...</a><br /></td></tr>
 <tr class="separator:a35c115838fe3056993f9f61785499503"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c556a7eebde8f1ca4880e4a53380f4c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#a0c556a7eebde8f1ca4880e4a53380f4c">CUDL_GET</a>(_value)&#160;&#160;&#160;(_value).value</td></tr>
@@ -99,7 +115,7 @@ Macros</h2></td></tr>
 <tr class="memitem:a48a4ca32ea8d0a17aa76bb7a7efe9784"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#a48a4ca32ea8d0a17aa76bb7a7efe9784">CUDL_ADD_EXPLICIT_CONVERSION_FRACTION_FACTOR</a>(_from,  _to,  _explicative,  _n,  _d)</td></tr>
 <tr class="memdesc:a48a4ca32ea8d0a17aa76bb7a7efe9784"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function allows to a conversion from one unit to another. It does this with a fraction. The from value will be multiplied by _n and divided by _d.  <a href="cudl_8h.html#a48a4ca32ea8d0a17aa76bb7a7efe9784">More...</a><br /></td></tr>
 <tr class="separator:a48a4ca32ea8d0a17aa76bb7a7efe9784"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ff2210fdc5a212ec5f8dd84d53721ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#a7ff2210fdc5a212ec5f8dd84d53721ad">CUDL_ADD_CONVERSION_FRACTION_FACTOR</a>(_from,  __to,  _n,  _d)&#160;&#160;&#160;<a class="el" href="cudl_8h.html#a48a4ca32ea8d0a17aa76bb7a7efe9784">CUDL_ADD_EXPLICIT_CONVERSION_FRACTION_FACTOR</a>(_from, __to, from##_from##_to, _n, _d)</td></tr>
+<tr class="memitem:a7ff2210fdc5a212ec5f8dd84d53721ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#a7ff2210fdc5a212ec5f8dd84d53721ad">CUDL_ADD_CONVERSION_FRACTION_FACTOR</a>(_from,  __to,  _n,  _d)&#160;&#160;&#160;<a class="el" href="cudl_8h.html#a48a4ca32ea8d0a17aa76bb7a7efe9784">CUDL_ADD_EXPLICIT_CONVERSION_FRACTION_FACTOR</a>(_from, __to, from_##_from##_to_, _n, _d)</td></tr>
 <tr class="memdesc:a7ff2210fdc5a212ec5f8dd84d53721ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simplified version of the <a class="el" href="cudl_8h.html#a48a4ca32ea8d0a17aa76bb7a7efe9784" title="This function allows to a conversion from one unit to another. It does this with a fraction....">CUDL_ADD_EXPLICIT_CONVERSION_FRACTION_FACTOR</a> to have a default explicative.  <a href="cudl_8h.html#a7ff2210fdc5a212ec5f8dd84d53721ad">More...</a><br /></td></tr>
 <tr class="separator:a7ff2210fdc5a212ec5f8dd84d53721ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1aa0021c58ba71b3782777076301c132"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#a1aa0021c58ba71b3782777076301c132">CUDL_ADD_CONVERSION_FACTOR</a>(_from,  _to,  _factor)&#160;&#160;&#160;<a class="el" href="cudl_8h.html#a7ff2210fdc5a212ec5f8dd84d53721ad">CUDL_ADD_CONVERSION_FRACTION_FACTOR</a>(_from, _to, _factor, 1)</td></tr>
@@ -187,7 +203,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="cudl_8h.html#a48a4ca32ea8d0a17aa76bb7a7efe9784">CUDL_ADD_EXPLICIT_CONVERSION_FRACTION_FACTOR</a>(_from, __to, from##_from##_to, _n, _d)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="cudl_8h.html#a48a4ca32ea8d0a17aa76bb7a7efe9784">CUDL_ADD_EXPLICIT_CONVERSION_FRACTION_FACTOR</a>(_from, __to, from_##_from##_to_, _n, _d)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -248,23 +264,23 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="cudl_8h.html#a810bb3b68c462b41168617371389238c">__CUDLE_UT</a>(_to) _explicative##_to(<a class="code" href="cudl_8h.html#a810bb3b68c462b41168617371389238c">__CUDLE_UT</a>(_from) from_value) {              \</div>
-<div class="line">    __CUDLE_UT(_to) to_value;                                                                \</div>
-<div class="line">    to_value.value = (from_value.value * _n) / _d;                                           \</div>
-<div class="line">    return to_value;                                                                         \</div>
-<div class="line">}</div>
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="cudl_8h.html#a59661ca75f8ca4b147b1fc96c01abdc2">__CUDL_UT</a>(_to) <a class="code" href="cudl_8h.html#aa24251ce4017c8633f5f559ffd0f66fa">__CUDL_L1STR</a>(<a class="code" href="cudl_8h.html#a61a4aac603a2f8de9be5f581f63ae176">__CUDL_AP</a>(_explicative), _to)(<a class="code" href="cudl_8h.html#a59661ca75f8ca4b147b1fc96c01abdc2">__CUDL_UT</a>(_from) from_value) {             \</div>
+<div class="line">        __CUDL_UT(_to) to_value;                                                                                       \</div>
+<div class="line">        to_value.value = (from_value.value * _n) / _d;                                                                 \</div>
+<div class="line">        return to_value;                                                                                               \</div>
+<div class="line">    }</div>
 </div><!-- fragment -->
 <p>This function allows to a conversion from one unit to another. It does this with a fraction. The from value will be multiplied by _n and divided by _d. </p>
-<div class="fragment"><div class="line"><a class="code" href="cudl_8h.html#a35c115838fe3056993f9f61785499503">CUDL_ADD_UNIT</a>(_v, uint32_t)</div>
-<div class="line"><a class="code" href="cudl_8h.html#a35c115838fe3056993f9f61785499503">CUDL_ADD_UNIT</a>(_mv, uint32_t)</div>
+<div class="fragment"><div class="line"><a class="code" href="cudl_8h.html#a35c115838fe3056993f9f61785499503">CUDL_ADD_UNIT</a>(v, uint32_t)</div>
+<div class="line"><a class="code" href="cudl_8h.html#a35c115838fe3056993f9f61785499503">CUDL_ADD_UNIT</a>(mv, uint32_t)</div>
 <div class="line"> </div>
-<div class="line"><a class="code" href="cudl_8h.html#a1aa0021c58ba71b3782777076301c132">CUDL_ADD_CONVERSION_FACTOR</a>(_v, _mv, 1000)</div>
-<div class="line"><a class="code" href="cudl_8h.html#a7ff2210fdc5a212ec5f8dd84d53721ad">CUDL_ADD_CONVERSION_FRACTION_FACTOR</a>(_mv, _v, 1, 1000)</div>
+<div class="line"><a class="code" href="cudl_8h.html#a1aa0021c58ba71b3782777076301c132">CUDL_ADD_CONVERSION_FACTOR</a>(v, mv, 1000)</div>
+<div class="line"><a class="code" href="cudl_8h.html#a7ff2210fdc5a212ec5f8dd84d53721ad">CUDL_ADD_CONVERSION_FRACTION_FACTOR</a>(mv, v, 1, 1000)</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> foo(<span class="keywordtype">void</span>) {</div>
-<div class="line">    _v_t volts = _v(10);</div>
-<div class="line">    _mv_t mvolts = from_v_to_mv(volts);      <span class="comment">// mvolts will be equal to 10000 internally.</span></div>
-<div class="line">    _v_t other_volts = from_mv_to_v(mvolts); <span class="comment">// other_volts will be equal to 10 internally.</span></div>
+<div class="line">    cudl_v_t volts = v(10);</div>
+<div class="line">    cudl_mv_t mvolts = cudl_from_v_to_mv(volts);      <span class="comment">// mvolts will be equal to 10000 internally.</span></div>
+<div class="line">    cudl_v_t other_volts = cudl_from_mv_to_v(mvolts); <span class="comment">// other_volts will be equal to 10 internally.</span></div>
 <div class="line">}</div>
 </div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -300,7 +316,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="cudl_8h.html#aae7c70a3211ee874af29223e08d7f437">CUDL_ADD_UNIT_WITH_OP</a>(_name, _type, <a class="el" href="cudl_8h.html#a63d4072e7ca0bd07e0840c13d60fbcf1">__CUDLE_NOP</a>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="cudl_8h.html#aae7c70a3211ee874af29223e08d7f437">CUDL_ADD_UNIT_WITH_OP</a>(_name, _type, <a class="el" href="cudl_8h.html#a6dc8711681148cf7af41e9f9922b6c97">__CUDL_NOP</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -310,7 +326,7 @@ Macros</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">_name</td><td>The name of the unit. This will be used to define the unit type and the init function. <div class="fragment"><div class="line"><a class="code" href="cudl_8h.html#a35c115838fe3056993f9f61785499503">CUDL_ADD_UNIT</a>(my_unit, <span class="keywordtype">int</span>)</div>
 <div class="line"><span class="comment">// This type and function will now exist</span></div>
-<div class="line">my_unit_t foo = my_unit(5); <span class="comment">// Foo will be equal to 5</span></div>
+<div class="line">cudl_my_unit_t foo = cudl_my_unit(5); <span class="comment">// Foo will be equal to 5</span></div>
 </div><!-- fragment --> </td></tr>
     <tr><td class="paramname">_type</td><td>The underlying storage type to use. </td></tr>
   </table>
@@ -350,12 +366,14 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>_name##_s { _type value; } <a class="code" href="cudl_8h.html#a810bb3b68c462b41168617371389238c">__CUDLE_UT</a>(_name);  \</div>
-<div class="line">static <span class="keyword">inline</span> <a class="code" href="cudl_8h.html#a810bb3b68c462b41168617371389238c">__CUDLE_UT</a>(_name) _name(_type input_value) {    \</div>
-<div class="line">    __CUDLE_UT(_name) ct;                                     \</div>
-<div class="line">    ct.value = _op(input_value);                              \</div>
-<div class="line">    return ct;                                                \</div>
-<div class="line">}</div>
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">typedef</span> <span class="keyword">struct </span>{                                                                                                   \</div>
+<div class="line">        _type value;                                                                                                   \</div>
+<div class="line">    } <a class="code" href="cudl_8h.html#a59661ca75f8ca4b147b1fc96c01abdc2">__CUDL_UT</a>(_name);                                                                                                \</div>
+<div class="line">    static <span class="keyword">inline</span> <a class="code" href="cudl_8h.html#a59661ca75f8ca4b147b1fc96c01abdc2">__CUDL_UT</a>(_name) <a class="code" href="cudl_8h.html#a61a4aac603a2f8de9be5f581f63ae176">__CUDL_AP</a>(_name)(_type input_value) {                                               \</div>
+<div class="line">        __CUDL_UT(_name) ct;                                                                                           \</div>
+<div class="line">        ct.value = _op(input_value);                                                                                   \</div>
+<div class="line">        return ct;                                                                                                     \</div>
+<div class="line">    }</div>
 </div><!-- fragment -->
 <p>Function to add a unit. </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -363,7 +381,7 @@ Macros</h2></td></tr>
     <tr><td class="paramname">_name</td><td>The name of the unit. This will be used to define the unit type and the init function. <div class="fragment"><div class="line">ADD_2(_x) (_x + 2)</div>
 <div class="line"><a class="code" href="cudl_8h.html#aae7c70a3211ee874af29223e08d7f437">CUDL_ADD_UNIT_WITH_OP</a>(my_unit, <span class="keywordtype">int</span>, ADD_2)</div>
 <div class="line"><span class="comment">// This type and function will now exist</span></div>
-<div class="line">my_unit_t foo = my_unit(5); <span class="comment">// Foo will be equal to 7</span></div>
+<div class="line">cudl_my_unit_t foo = cudl_my_unit(5); <span class="comment">// Foo will be equal to 7</span></div>
 </div><!-- fragment --> </td></tr>
     <tr><td class="paramname">_type</td><td>The underlying storage type to use. </td></tr>
     <tr><td class="paramname">_op</td><td>Should be a macro or function that can take _type as an input and returns _type as a value. </td></tr>
@@ -400,11 +418,13 @@ Macros</h2></td></tr>
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="acudl_8h_html_a7ff2210fdc5a212ec5f8dd84d53721ad"><div class="ttname"><a href="cudl_8h.html#a7ff2210fdc5a212ec5f8dd84d53721ad">CUDL_ADD_CONVERSION_FRACTION_FACTOR</a></div><div class="ttdeci">#define CUDL_ADD_CONVERSION_FRACTION_FACTOR(_from, __to, _n, _d)</div><div class="ttdoc">Simplified version of the CUDL_ADD_EXPLICIT_CONVERSION_FRACTION_FACTOR to have a default explicative.</div><div class="ttdef"><b>Definition:</b> cudl.h:104</div></div>
-<div class="ttc" id="acudl_8h_html_a1aa0021c58ba71b3782777076301c132"><div class="ttname"><a href="cudl_8h.html#a1aa0021c58ba71b3782777076301c132">CUDL_ADD_CONVERSION_FACTOR</a></div><div class="ttdeci">#define CUDL_ADD_CONVERSION_FACTOR(_from, _to, _factor)</div><div class="ttdoc">Simplified version of the CUDL_ADD_CONVERSION_FRACTION_FACTOR to have a default divider of 1....</div><div class="ttdef"><b>Definition:</b> cudl.h:114</div></div>
-<div class="ttc" id="acudl_8h_html_a810bb3b68c462b41168617371389238c"><div class="ttname"><a href="cudl_8h.html#a810bb3b68c462b41168617371389238c">__CUDLE_UT</a></div><div class="ttdeci">#define __CUDLE_UT(_name)</div><div class="ttdoc">Utility macro meant to easily rebuild the type name associated to the unit name. For internal use onl...</div><div class="ttdef"><b>Definition:</b> cudl.h:21</div></div>
-<div class="ttc" id="acudl_8h_html_a35c115838fe3056993f9f61785499503"><div class="ttname"><a href="cudl_8h.html#a35c115838fe3056993f9f61785499503">CUDL_ADD_UNIT</a></div><div class="ttdeci">#define CUDL_ADD_UNIT(_name, _type)</div><div class="ttdoc">Function to add a unit.</div><div class="ttdef"><b>Definition:</b> cudl.h:60</div></div>
-<div class="ttc" id="acudl_8h_html_aae7c70a3211ee874af29223e08d7f437"><div class="ttname"><a href="cudl_8h.html#aae7c70a3211ee874af29223e08d7f437">CUDL_ADD_UNIT_WITH_OP</a></div><div class="ttdeci">#define CUDL_ADD_UNIT_WITH_OP(_name, _type, _op)</div><div class="ttdoc">Function to add a unit.</div><div class="ttdef"><b>Definition:</b> cudl.h:42</div></div>
+<div class="ttc" id="acudl_8h_html_a59661ca75f8ca4b147b1fc96c01abdc2"><div class="ttname"><a href="cudl_8h.html#a59661ca75f8ca4b147b1fc96c01abdc2">__CUDL_UT</a></div><div class="ttdeci">#define __CUDL_UT(_name)</div><div class="ttdoc">Utility macro meant to easily rebuild the type name associated to the unit name. For internal use onl...</div><div class="ttdef"><b>Definition:</b> cudl.h:39</div></div>
+<div class="ttc" id="acudl_8h_html_a7ff2210fdc5a212ec5f8dd84d53721ad"><div class="ttname"><a href="cudl_8h.html#a7ff2210fdc5a212ec5f8dd84d53721ad">CUDL_ADD_CONVERSION_FRACTION_FACTOR</a></div><div class="ttdeci">#define CUDL_ADD_CONVERSION_FRACTION_FACTOR(_from, __to, _n, _d)</div><div class="ttdoc">Simplified version of the CUDL_ADD_EXPLICIT_CONVERSION_FRACTION_FACTOR to have a default explicative.</div><div class="ttdef"><b>Definition:</b> cudl.h:123</div></div>
+<div class="ttc" id="acudl_8h_html_a1aa0021c58ba71b3782777076301c132"><div class="ttname"><a href="cudl_8h.html#a1aa0021c58ba71b3782777076301c132">CUDL_ADD_CONVERSION_FACTOR</a></div><div class="ttdeci">#define CUDL_ADD_CONVERSION_FACTOR(_from, _to, _factor)</div><div class="ttdoc">Simplified version of the CUDL_ADD_CONVERSION_FRACTION_FACTOR to have a default divider of 1....</div><div class="ttdef"><b>Definition:</b> cudl.h:133</div></div>
+<div class="ttc" id="acudl_8h_html_a61a4aac603a2f8de9be5f581f63ae176"><div class="ttname"><a href="cudl_8h.html#a61a4aac603a2f8de9be5f581f63ae176">__CUDL_AP</a></div><div class="ttdeci">#define __CUDL_AP(_s)</div><div class="ttdoc">Utility macro to append CUDL_PREFIX at the beginning of the given token. For internal use only.</div><div class="ttdef"><b>Definition:</b> cudl.h:35</div></div>
+<div class="ttc" id="acudl_8h_html_a35c115838fe3056993f9f61785499503"><div class="ttname"><a href="cudl_8h.html#a35c115838fe3056993f9f61785499503">CUDL_ADD_UNIT</a></div><div class="ttdeci">#define CUDL_ADD_UNIT(_name, _type)</div><div class="ttdoc">Function to add a unit.</div><div class="ttdef"><b>Definition:</b> cudl.h:79</div></div>
+<div class="ttc" id="acudl_8h_html_aa24251ce4017c8633f5f559ffd0f66fa"><div class="ttname"><a href="cudl_8h.html#aa24251ce4017c8633f5f559ffd0f66fa">__CUDL_L1STR</a></div><div class="ttdeci">#define __CUDL_L1STR(_p, _s)</div><div class="ttdoc">Level 1 stringification macro. For internal use only.</div><div class="ttdef"><b>Definition:</b> cudl.h:31</div></div>
+<div class="ttc" id="acudl_8h_html_aae7c70a3211ee874af29223e08d7f437"><div class="ttname"><a href="cudl_8h.html#aae7c70a3211ee874af29223e08d7f437">CUDL_ADD_UNIT_WITH_OP</a></div><div class="ttdeci">#define CUDL_ADD_UNIT_WITH_OP(_name, _type, _op)</div><div class="ttdoc">Function to add a unit.</div><div class="ttdef"><b>Definition:</b> cudl.h:59</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

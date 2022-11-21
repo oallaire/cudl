@@ -71,31 +71,31 @@ Introduction</h1>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="cudl_8h.html">cudl.h</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code" href="cudl_8h.html#a35c115838fe3056993f9f61785499503">CUDL_ADD_UNIT</a>(_v, uint32_t)</div>
-<div class="line"><a class="code" href="cudl_8h.html#a35c115838fe3056993f9f61785499503">CUDL_ADD_UNIT</a>(_mv, uint32_t)</div>
+<div class="line"><a class="code" href="cudl_8h.html#a35c115838fe3056993f9f61785499503">CUDL_ADD_UNIT</a>(v, uint32_t)</div>
+<div class="line"><a class="code" href="cudl_8h.html#a35c115838fe3056993f9f61785499503">CUDL_ADD_UNIT</a>(mv, uint32_t)</div>
 <div class="line"> </div>
-<div class="line"><a class="code" href="cudl_8h.html#a1aa0021c58ba71b3782777076301c132">CUDL_ADD_CONVERSION_FACTOR</a>(_v, _mv, 1000)</div>
-<div class="line"><a class="code" href="cudl_8h.html#a7ff2210fdc5a212ec5f8dd84d53721ad">CUDL_ADD_CONVERSION_FRACTION_FACTOR</a>(_mv, _v, 1, 1000)</div>
+<div class="line"><a class="code" href="cudl_8h.html#a1aa0021c58ba71b3782777076301c132">CUDL_ADD_CONVERSION_FACTOR</a>(v, mv, 1000)</div>
+<div class="line"><a class="code" href="cudl_8h.html#a7ff2210fdc5a212ec5f8dd84d53721ad">CUDL_ADD_CONVERSION_FRACTION_FACTOR</a>(mv, v, 1, 1000)</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code will compile and convert from volts to milli-volts.</span></div>
 <div class="line"><span class="keywordtype">void</span> foo(<span class="keywordtype">void</span>) {</div>
-<div class="line">    _v_t volts = _v(10);</div>
-<div class="line">    _mv_t mvolts = from_v_to_mv(volts);</div>
+<div class="line">    cudl_v_t volts = cudl_v(10);</div>
+<div class="line">    cudl_mv_t mvolts = cudl_from_v_to_mv(volts);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code will not compile, thus adding a unit checking system.</span></div>
 <div class="line"><span class="keywordtype">void</span> bar(<span class="keywordtype">void</span>) {</div>
-<div class="line">    _v_t volts = _v(10);</div>
-<div class="line">    _mv_t mvolts = volts;</div>
+<div class="line">    cudl_v_t volts = cudl_v(10);</div>
+<div class="line">    cudl_mv_t mvolts = volts;</div>
 <div class="line">}</div>
 </div><!-- fragment --> <h1><a class="anchor" id="doc_sec"></a>
 Documentation</h1>
 <p>See <a class="el" href="cudl_8h.html" title="This library is meant to make units more usable in a C code base. It takes inspiration from the C++ u...">cudl.h</a> </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
-<div class="ttc" id="acudl_8h_html_a7ff2210fdc5a212ec5f8dd84d53721ad"><div class="ttname"><a href="cudl_8h.html#a7ff2210fdc5a212ec5f8dd84d53721ad">CUDL_ADD_CONVERSION_FRACTION_FACTOR</a></div><div class="ttdeci">#define CUDL_ADD_CONVERSION_FRACTION_FACTOR(_from, __to, _n, _d)</div><div class="ttdoc">Simplified version of the CUDL_ADD_EXPLICIT_CONVERSION_FRACTION_FACTOR to have a default explicative.</div><div class="ttdef"><b>Definition:</b> cudl.h:104</div></div>
-<div class="ttc" id="acudl_8h_html_a1aa0021c58ba71b3782777076301c132"><div class="ttname"><a href="cudl_8h.html#a1aa0021c58ba71b3782777076301c132">CUDL_ADD_CONVERSION_FACTOR</a></div><div class="ttdeci">#define CUDL_ADD_CONVERSION_FACTOR(_from, _to, _factor)</div><div class="ttdoc">Simplified version of the CUDL_ADD_CONVERSION_FRACTION_FACTOR to have a default divider of 1....</div><div class="ttdef"><b>Definition:</b> cudl.h:114</div></div>
-<div class="ttc" id="acudl_8h_html_a35c115838fe3056993f9f61785499503"><div class="ttname"><a href="cudl_8h.html#a35c115838fe3056993f9f61785499503">CUDL_ADD_UNIT</a></div><div class="ttdeci">#define CUDL_ADD_UNIT(_name, _type)</div><div class="ttdoc">Function to add a unit.</div><div class="ttdef"><b>Definition:</b> cudl.h:60</div></div>
+<div class="ttc" id="acudl_8h_html_a7ff2210fdc5a212ec5f8dd84d53721ad"><div class="ttname"><a href="cudl_8h.html#a7ff2210fdc5a212ec5f8dd84d53721ad">CUDL_ADD_CONVERSION_FRACTION_FACTOR</a></div><div class="ttdeci">#define CUDL_ADD_CONVERSION_FRACTION_FACTOR(_from, __to, _n, _d)</div><div class="ttdoc">Simplified version of the CUDL_ADD_EXPLICIT_CONVERSION_FRACTION_FACTOR to have a default explicative.</div><div class="ttdef"><b>Definition:</b> cudl.h:123</div></div>
+<div class="ttc" id="acudl_8h_html_a1aa0021c58ba71b3782777076301c132"><div class="ttname"><a href="cudl_8h.html#a1aa0021c58ba71b3782777076301c132">CUDL_ADD_CONVERSION_FACTOR</a></div><div class="ttdeci">#define CUDL_ADD_CONVERSION_FACTOR(_from, _to, _factor)</div><div class="ttdoc">Simplified version of the CUDL_ADD_CONVERSION_FRACTION_FACTOR to have a default divider of 1....</div><div class="ttdef"><b>Definition:</b> cudl.h:133</div></div>
+<div class="ttc" id="acudl_8h_html_a35c115838fe3056993f9f61785499503"><div class="ttname"><a href="cudl_8h.html#a35c115838fe3056993f9f61785499503">CUDL_ADD_UNIT</a></div><div class="ttdeci">#define CUDL_ADD_UNIT(_name, _type)</div><div class="ttdoc">Function to add a unit.</div><div class="ttdef"><b>Definition:</b> cudl.h:79</div></div>
 <div class="ttc" id="acudl_8h_html"><div class="ttname"><a href="cudl_8h.html">cudl.h</a></div><div class="ttdoc">This library is meant to make units more usable in a C code base. It takes inspiration from the C++ u...</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

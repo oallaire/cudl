@@ -1,12 +1,18 @@
 var searchData=
 [
   ['cudl_2eh_5',['cudl.h',['../cudl_8h.html',1,'']]],
-  ['cudl_5fadd_5fconversion_5ffactor_6',['CUDL_ADD_CONVERSION_FACTOR',['../cudl_8h.html#a1aa0021c58ba71b3782777076301c132',1,'cudl.h']]],
-  ['cudl_5fadd_5fconversion_5ffraction_5ffactor_7',['CUDL_ADD_CONVERSION_FRACTION_FACTOR',['../cudl_8h.html#a7ff2210fdc5a212ec5f8dd84d53721ad',1,'cudl.h']]],
-  ['cudl_5fadd_5fexplicit_5fconversion_5ffraction_5ffactor_8',['CUDL_ADD_EXPLICIT_CONVERSION_FRACTION_FACTOR',['../cudl_8h.html#a48a4ca32ea8d0a17aa76bb7a7efe9784',1,'cudl.h']]],
-  ['cudl_5fadd_5funit_9',['CUDL_ADD_UNIT',['../cudl_8h.html#a35c115838fe3056993f9f61785499503',1,'cudl.h']]],
-  ['cudl_5fadd_5funit_5fwith_5fop_10',['CUDL_ADD_UNIT_WITH_OP',['../cudl_8h.html#aae7c70a3211ee874af29223e08d7f437',1,'cudl.h']]],
-  ['cudl_5fget_11',['CUDL_GET',['../cudl_8h.html#a0c556a7eebde8f1ca4880e4a53380f4c',1,'cudl.h']]],
-  ['cudl_5fprefix_12',['CUDL_PREFIX',['../cudl_8h.html#a936d1e1167db6b3f45b8febfad11f1db',1,'cudl.h']]],
-  ['cudl_20index_20page_13',['cudl Index Page',['../index.html',1,'']]]
+  ['cudl_5fadd_5fbitwise_5fnot_5fop_6',['CUDL_ADD_BITWISE_NOT_OP',['../cudl_8h.html#a9827d1f8d2f1db7d53c6252e7721d1d4',1,'cudl.h']]],
+  ['cudl_5fadd_5fcommon_5foperators_7',['CUDL_ADD_COMMON_OPERATORS',['../cudl_8h.html#acb317e26b1d7f5854766c2177e537023',1,'cudl.h']]],
+  ['cudl_5fadd_5fconversion_5ffactor_8',['CUDL_ADD_CONVERSION_FACTOR',['../cudl_8h.html#a1aa0021c58ba71b3782777076301c132',1,'cudl.h']]],
+  ['cudl_5fadd_5fconversion_5ffraction_5ffactor_9',['CUDL_ADD_CONVERSION_FRACTION_FACTOR',['../cudl_8h.html#a7ff2210fdc5a212ec5f8dd84d53721ad',1,'cudl.h']]],
+  ['cudl_5fadd_5fexplicit_5fconversion_5ffraction_5ffactor_10',['CUDL_ADD_EXPLICIT_CONVERSION_FRACTION_FACTOR',['../cudl_8h.html#a48a4ca32ea8d0a17aa76bb7a7efe9784',1,'cudl.h']]],
+  ['cudl_5fadd_5finteger_5foperators_11',['CUDL_ADD_INTEGER_OPERATORS',['../cudl_8h.html#abac8037916044b75bdeaf828515b5a91',1,'cudl.h']]],
+  ['cudl_5fadd_5fno_5ftransform_5fop_12',['CUDL_ADD_NO_TRANSFORM_OP',['../cudl_8h.html#a329958c66e24b83685e08ed5591a1739',1,'cudl.h']]],
+  ['cudl_5fadd_5fno_5funit_5fop_13',['CUDL_ADD_NO_UNIT_OP',['../cudl_8h.html#ad27a47f5ecebbbde0d6c2c4df7b09e05',1,'cudl.h']]],
+  ['cudl_5fadd_5frelational_5fop_14',['CUDL_ADD_RELATIONAL_OP',['../cudl_8h.html#a6cd9fa2278af9010f525d4b77f237b52',1,'cudl.h']]],
+  ['cudl_5fadd_5funit_15',['CUDL_ADD_UNIT',['../cudl_8h.html#a35c115838fe3056993f9f61785499503',1,'cudl.h']]],
+  ['cudl_5fadd_5funit_5fwith_5fop_16',['CUDL_ADD_UNIT_WITH_OP',['../cudl_8h.html#aae7c70a3211ee874af29223e08d7f437',1,'cudl.h']]],
+  ['cudl_5fget_17',['CUDL_GET',['../cudl_8h.html#a0c556a7eebde8f1ca4880e4a53380f4c',1,'cudl.h']]],
+  ['cudl_5fprefix_18',['CUDL_PREFIX',['../cudl_8h.html#a936d1e1167db6b3f45b8febfad11f1db',1,'cudl.h']]],
+  ['cudl_20index_20page_19',['cudl Index Page',['../index.html',1,'']]]
 ];

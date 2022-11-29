@@ -74,7 +74,8 @@ $(function() {
 
 <p>This library is meant to make units more usable in a C code base. It takes inspiration from the C++ user defined literals. See the documentation for usage.  
 <a href="#details">More...</a></p>
-
+<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+</div>
 <p><a href="cudl_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -121,11 +122,124 @@ Macros</h2></td></tr>
 <tr class="memitem:a1aa0021c58ba71b3782777076301c132"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#a1aa0021c58ba71b3782777076301c132">CUDL_ADD_CONVERSION_FACTOR</a>(_from,  _to,  _factor)&#160;&#160;&#160;<a class="el" href="cudl_8h.html#a7ff2210fdc5a212ec5f8dd84d53721ad">CUDL_ADD_CONVERSION_FRACTION_FACTOR</a>(_from, _to, _factor, 1)</td></tr>
 <tr class="memdesc:a1aa0021c58ba71b3782777076301c132"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simplified version of the <a class="el" href="cudl_8h.html#a7ff2210fdc5a212ec5f8dd84d53721ad" title="Simplified version of the CUDL_ADD_EXPLICIT_CONVERSION_FRACTION_FACTOR to have a default explicative.">CUDL_ADD_CONVERSION_FRACTION_FACTOR</a> to have a default divider of 1. In other words, this adds a conversion that is a simple multiplication.  <a href="cudl_8h.html#a1aa0021c58ba71b3782777076301c132">More...</a><br /></td></tr>
 <tr class="separator:a1aa0021c58ba71b3782777076301c132"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a329958c66e24b83685e08ed5591a1739"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#a329958c66e24b83685e08ed5591a1739">CUDL_ADD_NO_TRANSFORM_OP</a>(_name,  _op_name,  _op)</td></tr>
+<tr class="memdesc:a329958c66e24b83685e08ed5591a1739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to add an operation that has a left hand side and right side of the same type and does not change the units. For example, adding 2 variables of volts together still results in volts, but multiplying would result in square volts. To do the former, use <a class="el" href="cudl_8h.html#a329958c66e24b83685e08ed5591a1739" title="Macro to add an operation that has a left hand side and right side of the same type and does not chan...">CUDL_ADD_NO_TRANSFORM_OP</a>.  <a href="cudl_8h.html#a329958c66e24b83685e08ed5591a1739">More...</a><br /></td></tr>
+<tr class="separator:a329958c66e24b83685e08ed5591a1739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad27a47f5ecebbbde0d6c2c4df7b09e05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#ad27a47f5ecebbbde0d6c2c4df7b09e05">CUDL_ADD_NO_UNIT_OP</a>(_name,  _op_name,  _op,  _type)</td></tr>
+<tr class="memdesc:ad27a47f5ecebbbde0d6c2c4df7b09e05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to add an operation that has a left hand side of the unit type and a unitless right side. This is a type of operation that does not change the unit type. For example, doubling (or multiplying by 2) a voltage.  <a href="cudl_8h.html#ad27a47f5ecebbbde0d6c2c4df7b09e05">More...</a><br /></td></tr>
+<tr class="separator:ad27a47f5ecebbbde0d6c2c4df7b09e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cd9fa2278af9010f525d4b77f237b52"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#a6cd9fa2278af9010f525d4b77f237b52">CUDL_ADD_RELATIONAL_OP</a>(_name,  _op_name,  _op)</td></tr>
+<tr class="memdesc:a6cd9fa2278af9010f525d4b77f237b52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to add a relational operation (==, !=, &gt;, &gt;=, &lt;, &lt;=). The result of these operations is always a boolean value.  <a href="cudl_8h.html#a6cd9fa2278af9010f525d4b77f237b52">More...</a><br /></td></tr>
+<tr class="separator:a6cd9fa2278af9010f525d4b77f237b52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9827d1f8d2f1db7d53c6252e7721d1d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#a9827d1f8d2f1db7d53c6252e7721d1d4">CUDL_ADD_BITWISE_NOT_OP</a>(_name,  _op_name)</td></tr>
+<tr class="memdesc:a9827d1f8d2f1db7d53c6252e7721d1d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the bitwise not operator for a given unit.  <a href="cudl_8h.html#a9827d1f8d2f1db7d53c6252e7721d1d4">More...</a><br /></td></tr>
+<tr class="separator:a9827d1f8d2f1db7d53c6252e7721d1d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb317e26b1d7f5854766c2177e537023"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#acb317e26b1d7f5854766c2177e537023">CUDL_ADD_COMMON_OPERATORS</a>(_name,  _type)</td></tr>
+<tr class="memdesc:acb317e26b1d7f5854766c2177e537023"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper macro to add operators that are supported by all types.  <a href="cudl_8h.html#acb317e26b1d7f5854766c2177e537023">More...</a><br /></td></tr>
+<tr class="separator:acb317e26b1d7f5854766c2177e537023"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abac8037916044b75bdeaf828515b5a91"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cudl_8h.html#abac8037916044b75bdeaf828515b5a91">CUDL_ADD_INTEGER_OPERATORS</a>(_name,  _type)</td></tr>
+<tr class="memdesc:abac8037916044b75bdeaf828515b5a91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper macro to add operators that are supported by integer types.  <a href="cudl_8h.html#abac8037916044b75bdeaf828515b5a91">More...</a><br /></td></tr>
+<tr class="separator:abac8037916044b75bdeaf828515b5a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This library is meant to make units more usable in a C code base. It takes inspiration from the C++ user defined literals. See the documentation for usage. </p>
 <dl class="section author"><dt>Author</dt><dd>Olivier Allaire </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a9827d1f8d2f1db7d53c6252e7721d1d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9827d1f8d2f1db7d53c6252e7721d1d4">&#9670;&nbsp;</a></span>CUDL_ADD_BITWISE_NOT_OP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CUDL_ADD_BITWISE_NOT_OP</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_name, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_op_name&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="cudl_8h.html#a59661ca75f8ca4b147b1fc96c01abdc2">__CUDL_UT</a>(_name) <a class="code" href="cudl_8h.html#aa24251ce4017c8633f5f559ffd0f66fa">__CUDL_L1STR</a>(<a class="code" href="cudl_8h.html#a61a4aac603a2f8de9be5f581f63ae176">__CUDL_AP</a>(_name), _op_name)(<a class="code" href="cudl_8h.html#a59661ca75f8ca4b147b1fc96c01abdc2">__CUDL_UT</a>(_name) value) {                  \</div>
+<div class="line">        value.value = ~value.value;                                                                                    \</div>
+<div class="line">        return value;                                                                                                  \</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p>Add the bitwise not operator for a given unit. </p>
+<div class="fragment"><div class="line"><a class="code" href="cudl_8h.html#a35c115838fe3056993f9f61785499503">CUDL_ADD_UNIT</a>(v, uint8_t)</div>
+<div class="line"><a class="code" href="cudl_8h.html#a9827d1f8d2f1db7d53c6252e7721d1d4">CUDL_ADD_BITWISE_NOT_OP</a>(v, _bnot)</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> foo(<span class="keywordtype">void</span>) {</div>
+<div class="line">   cudl_v_t v1 = cudl_v(10);</div>
+<div class="line">   cudl_v_t result = cudl_v_bnot(v1); <span class="comment">// result will contain 245.</span></div>
+<div class="line">}</div>
+</div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_name</td><td>The unit to add an op for. It is expected to be the same as the _name param used with CUDL_ADD_UNIT*. </td></tr>
+    <tr><td class="paramname">_op_name</td><td>The core name of function to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acb317e26b1d7f5854766c2177e537023"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb317e26b1d7f5854766c2177e537023">&#9670;&nbsp;</a></span>CUDL_ADD_COMMON_OPERATORS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CUDL_ADD_COMMON_OPERATORS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_name, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_type&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code" href="cudl_8h.html#a329958c66e24b83685e08ed5591a1739">CUDL_ADD_NO_TRANSFORM_OP</a>(_name, _add, +)                                                                           \</div>
+<div class="line">    CUDL_ADD_NO_TRANSFORM_OP(_name, _sub, -)                                                                           \</div>
+<div class="line">    CUDL_ADD_NO_UNIT_OP(_name, _mul, *, _type)                                                                         \</div>
+<div class="line">    CUDL_ADD_NO_UNIT_OP(_name, _div, /, _type)                                                                         \</div>
+<div class="line">    CUDL_ADD_RELATIONAL_OP(_name, _eq, ==)                                                                             \</div>
+<div class="line">    CUDL_ADD_RELATIONAL_OP(_name, _ne, !=)                                                                             \</div>
+<div class="line">    CUDL_ADD_RELATIONAL_OP(_name, _gt, &gt;)                                                                              \</div>
+<div class="line">    CUDL_ADD_RELATIONAL_OP(_name, _ge, &gt;=)                                                                             \</div>
+<div class="line">    CUDL_ADD_RELATIONAL_OP(_name, _lt, &lt;)                                                                              \</div>
+<div class="line">    CUDL_ADD_RELATIONAL_OP(_name, _le, &lt;=)</div>
+</div><!-- fragment -->
+<p>Helper macro to add operators that are supported by all types. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_name</td><td>The unit to add an op for. It is expected to be the same as the _name param used with CUDL_ADD_UNIT*. </td></tr>
+    <tr><td class="paramname">_type</td><td>The underlying storage type to use. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a1aa0021c58ba71b3782777076301c132"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1aa0021c58ba71b3782777076301c132">&#9670;&nbsp;</a></span>CUDL_ADD_CONVERSION_FACTOR</h2>
 
@@ -295,6 +409,227 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a id="abac8037916044b75bdeaf828515b5a91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abac8037916044b75bdeaf828515b5a91">&#9670;&nbsp;</a></span>CUDL_ADD_INTEGER_OPERATORS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CUDL_ADD_INTEGER_OPERATORS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_name, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_type&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code" href="cudl_8h.html#acb317e26b1d7f5854766c2177e537023">CUDL_ADD_COMMON_OPERATORS</a>(_name, _type)                                                                            \</div>
+<div class="line">    CUDL_ADD_NO_UNIT_OP(_name, _mod, %, _type)                                                                         \</div>
+<div class="line">    CUDL_ADD_NO_UNIT_OP(_name, _and, &amp;, _type)                                                                         \</div>
+<div class="line">    CUDL_ADD_NO_UNIT_OP(_name, _or, |, _type)                                                                          \</div>
+<div class="line">    CUDL_ADD_NO_UNIT_OP(_name, _xor, ^, _type)                                                                         \</div>
+<div class="line">    CUDL_ADD_NO_UNIT_OP(_name, _bsl, &lt;&lt;, _type)                                                                        \</div>
+<div class="line">    CUDL_ADD_NO_UNIT_OP(_name, _bsr, &gt;&gt;, _type)                                                                        \</div>
+<div class="line">    CUDL_ADD_BITWISE_NOT_OP(_name, _bnot)</div>
+</div><!-- fragment -->
+<p>Helper macro to add operators that are supported by integer types. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_name</td><td>The unit to add an op for. It is expected to be the same as the _name param used with CUDL_ADD_UNIT*. </td></tr>
+    <tr><td class="paramname">_type</td><td>The underlying storage type to use. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a329958c66e24b83685e08ed5591a1739"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a329958c66e24b83685e08ed5591a1739">&#9670;&nbsp;</a></span>CUDL_ADD_NO_TRANSFORM_OP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CUDL_ADD_NO_TRANSFORM_OP</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_name, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_op_name, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_op&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="cudl_8h.html#a59661ca75f8ca4b147b1fc96c01abdc2">__CUDL_UT</a>(_name)                                                                                     \</div>
+<div class="line">            __CUDL_L1STR(<a class="code" href="cudl_8h.html#a61a4aac603a2f8de9be5f581f63ae176">__CUDL_AP</a>(_name), _op_name)(<a class="code" href="cudl_8h.html#a59661ca75f8ca4b147b1fc96c01abdc2">__CUDL_UT</a>(_name) lhs, <a class="code" href="cudl_8h.html#a59661ca75f8ca4b147b1fc96c01abdc2">__CUDL_UT</a>(_name) rhs) {                     \</div>
+<div class="line">        __CUDL_UT(_name) result;                                                                                       \</div>
+<div class="line">        result.value = <a class="code" href="cudl_8h.html#a0c556a7eebde8f1ca4880e4a53380f4c">CUDL_GET</a>(lhs) _op <a class="code" href="cudl_8h.html#a0c556a7eebde8f1ca4880e4a53380f4c">CUDL_GET</a>(rhs);                                                                \</div>
+<div class="line">        return result;                                                                                                 \</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p>Macro to add an operation that has a left hand side and right side of the same type and does not change the units. For example, adding 2 variables of volts together still results in volts, but multiplying would result in square volts. To do the former, use <a class="el" href="cudl_8h.html#a329958c66e24b83685e08ed5591a1739" title="Macro to add an operation that has a left hand side and right side of the same type and does not chan...">CUDL_ADD_NO_TRANSFORM_OP</a>. </p>
+<div class="fragment"><div class="line"><a class="code" href="cudl_8h.html#a35c115838fe3056993f9f61785499503">CUDL_ADD_UNIT</a>(v, uint32_t)</div>
+<div class="line">CUDL_ADD_ARITHMETIC_OP(v, _add, +)</div>
+<div class="line"> </div>
+<div class="line">void foo(<span class="keywordtype">void</span>) {</div>
+<div class="line">    cudl_v_t v1 = cudl_v(10);</div>
+<div class="line">    cudl_v_t v2 = cudl_v(42);</div>
+<div class="line">    cudl_v_t result = cudl_v_add(v1, v2); <span class="comment">// result will contain 52.</span></div>
+<div class="line">}</div>
+</div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_name</td><td>The unit to add an op for. It is expected to be the same as the _name param used with CUDL_ADD_UNIT*. </td></tr>
+    <tr><td class="paramname">_op_name</td><td>The core name of function to add. </td></tr>
+    <tr><td class="paramname">_op</td><td>The op to use between the 2 values. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad27a47f5ecebbbde0d6c2c4df7b09e05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad27a47f5ecebbbde0d6c2c4df7b09e05">&#9670;&nbsp;</a></span>CUDL_ADD_NO_UNIT_OP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CUDL_ADD_NO_UNIT_OP</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_name, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_op_name, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_op, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_type&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="cudl_8h.html#a59661ca75f8ca4b147b1fc96c01abdc2">__CUDL_UT</a>(_name) <a class="code" href="cudl_8h.html#aa24251ce4017c8633f5f559ffd0f66fa">__CUDL_L1STR</a>(<a class="code" href="cudl_8h.html#a61a4aac603a2f8de9be5f581f63ae176">__CUDL_AP</a>(_name), _op_name)(<a class="code" href="cudl_8h.html#a59661ca75f8ca4b147b1fc96c01abdc2">__CUDL_UT</a>(_name) lhs, _type rhs) {         \</div>
+<div class="line">        __CUDL_UT(_name) result;                                                                                       \</div>
+<div class="line">        result.value = <a class="code" href="cudl_8h.html#a0c556a7eebde8f1ca4880e4a53380f4c">CUDL_GET</a>(lhs) _op rhs;                                                                          \</div>
+<div class="line">        return result;                                                                                                 \</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p>Macro to add an operation that has a left hand side of the unit type and a unitless right side. This is a type of operation that does not change the unit type. For example, doubling (or multiplying by 2) a voltage. </p>
+<div class="fragment"><div class="line"><a class="code" href="cudl_8h.html#a35c115838fe3056993f9f61785499503">CUDL_ADD_UNIT</a>(v, uint32_t)</div>
+<div class="line"><a class="code" href="cudl_8h.html#a329958c66e24b83685e08ed5591a1739">CUDL_ADD_NO_TRANSFORM_OP</a>(v, _mul, *, uint32_t)</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> foo(<span class="keywordtype">void</span>) {</div>
+<div class="line">    cudl_v_t v1 = cudl_v(10);</div>
+<div class="line">    cudl_v_t result = cudl_v_mul(v1, 2); <span class="comment">// result will contain 20.</span></div>
+<div class="line">}</div>
+</div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_name</td><td>The unit to add an op for. It is expected to be the same as the _name param used with CUDL_ADD_UNIT*. </td></tr>
+    <tr><td class="paramname">_op_name</td><td>The core name of function to add. </td></tr>
+    <tr><td class="paramname">_op</td><td>The op to use between the 2 values. </td></tr>
+    <tr><td class="paramname">_type</td><td>The underlying storage type to use. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6cd9fa2278af9010f525d4b77f237b52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cd9fa2278af9010f525d4b77f237b52">&#9670;&nbsp;</a></span>CUDL_ADD_RELATIONAL_OP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CUDL_ADD_RELATIONAL_OP</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_name, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_op_name, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_op&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="cudl_8h.html#aa24251ce4017c8633f5f559ffd0f66fa">__CUDL_L1STR</a>(<a class="code" href="cudl_8h.html#a61a4aac603a2f8de9be5f581f63ae176">__CUDL_AP</a>(_name), _op_name)(<a class="code" href="cudl_8h.html#a59661ca75f8ca4b147b1fc96c01abdc2">__CUDL_UT</a>(_name) lhs, <a class="code" href="cudl_8h.html#a59661ca75f8ca4b147b1fc96c01abdc2">__CUDL_UT</a>(_name) rhs) {          \</div>
+<div class="line">        return <a class="code" href="cudl_8h.html#a0c556a7eebde8f1ca4880e4a53380f4c">CUDL_GET</a>(lhs) _op <a class="code" href="cudl_8h.html#a0c556a7eebde8f1ca4880e4a53380f4c">CUDL_GET</a>(rhs);                                                                        \</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p>Macro to add a relational operation (==, !=, &gt;, &gt;=, &lt;, &lt;=). The result of these operations is always a boolean value. </p>
+<div class="fragment"><div class="line"><a class="code" href="cudl_8h.html#a35c115838fe3056993f9f61785499503">CUDL_ADD_UNIT</a>(v, uint32_t)</div>
+<div class="line"><a class="code" href="cudl_8h.html#a6cd9fa2278af9010f525d4b77f237b52">CUDL_ADD_RELATIONAL_OP</a>(v, _eq, ==)</div>
+<div class="line"> </div>
+<div class="line">void foo(<span class="keywordtype">void</span>) {</div>
+<div class="line">   cudl_v_t v1 = cudl_v(10);</div>
+<div class="line">   cudl_v_t v2 = cudl_v(11);</div>
+<div class="line">   <span class="keywordtype">bool</span> result = cudl_v_eq(v1, v2); <span class="comment">// result will contain false.</span></div>
+<div class="line">}</div>
+</div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_name</td><td>The unit to add an op for. It is expected to be the same as the _name param used with CUDL_ADD_UNIT*. </td></tr>
+    <tr><td class="paramname">_op_name</td><td>The core name of function to add. </td></tr>
+    <tr><td class="paramname">_op</td><td>The op to use between the 2 values. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a35c115838fe3056993f9f61785499503"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a35c115838fe3056993f9f61785499503">&#9670;&nbsp;</a></span>CUDL_ADD_UNIT</h2>
 
@@ -418,13 +753,18 @@ Macros</h2></td></tr>
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="acudl_8h_html_a59661ca75f8ca4b147b1fc96c01abdc2"><div class="ttname"><a href="cudl_8h.html#a59661ca75f8ca4b147b1fc96c01abdc2">__CUDL_UT</a></div><div class="ttdeci">#define __CUDL_UT(_name)</div><div class="ttdoc">Utility macro meant to easily rebuild the type name associated to the unit name. For internal use onl...</div><div class="ttdef"><b>Definition:</b> cudl.h:39</div></div>
-<div class="ttc" id="acudl_8h_html_a7ff2210fdc5a212ec5f8dd84d53721ad"><div class="ttname"><a href="cudl_8h.html#a7ff2210fdc5a212ec5f8dd84d53721ad">CUDL_ADD_CONVERSION_FRACTION_FACTOR</a></div><div class="ttdeci">#define CUDL_ADD_CONVERSION_FRACTION_FACTOR(_from, __to, _n, _d)</div><div class="ttdoc">Simplified version of the CUDL_ADD_EXPLICIT_CONVERSION_FRACTION_FACTOR to have a default explicative.</div><div class="ttdef"><b>Definition:</b> cudl.h:123</div></div>
-<div class="ttc" id="acudl_8h_html_a1aa0021c58ba71b3782777076301c132"><div class="ttname"><a href="cudl_8h.html#a1aa0021c58ba71b3782777076301c132">CUDL_ADD_CONVERSION_FACTOR</a></div><div class="ttdeci">#define CUDL_ADD_CONVERSION_FACTOR(_from, _to, _factor)</div><div class="ttdoc">Simplified version of the CUDL_ADD_CONVERSION_FRACTION_FACTOR to have a default divider of 1....</div><div class="ttdef"><b>Definition:</b> cudl.h:133</div></div>
-<div class="ttc" id="acudl_8h_html_a61a4aac603a2f8de9be5f581f63ae176"><div class="ttname"><a href="cudl_8h.html#a61a4aac603a2f8de9be5f581f63ae176">__CUDL_AP</a></div><div class="ttdeci">#define __CUDL_AP(_s)</div><div class="ttdoc">Utility macro to append CUDL_PREFIX at the beginning of the given token. For internal use only.</div><div class="ttdef"><b>Definition:</b> cudl.h:35</div></div>
-<div class="ttc" id="acudl_8h_html_a35c115838fe3056993f9f61785499503"><div class="ttname"><a href="cudl_8h.html#a35c115838fe3056993f9f61785499503">CUDL_ADD_UNIT</a></div><div class="ttdeci">#define CUDL_ADD_UNIT(_name, _type)</div><div class="ttdoc">Function to add a unit.</div><div class="ttdef"><b>Definition:</b> cudl.h:79</div></div>
-<div class="ttc" id="acudl_8h_html_aa24251ce4017c8633f5f559ffd0f66fa"><div class="ttname"><a href="cudl_8h.html#aa24251ce4017c8633f5f559ffd0f66fa">__CUDL_L1STR</a></div><div class="ttdeci">#define __CUDL_L1STR(_p, _s)</div><div class="ttdoc">Level 1 stringification macro. For internal use only.</div><div class="ttdef"><b>Definition:</b> cudl.h:31</div></div>
-<div class="ttc" id="acudl_8h_html_aae7c70a3211ee874af29223e08d7f437"><div class="ttname"><a href="cudl_8h.html#aae7c70a3211ee874af29223e08d7f437">CUDL_ADD_UNIT_WITH_OP</a></div><div class="ttdeci">#define CUDL_ADD_UNIT_WITH_OP(_name, _type, _op)</div><div class="ttdoc">Function to add a unit.</div><div class="ttdef"><b>Definition:</b> cudl.h:59</div></div>
+<div class="ttc" id="acudl_8h_html_a9827d1f8d2f1db7d53c6252e7721d1d4"><div class="ttname"><a href="cudl_8h.html#a9827d1f8d2f1db7d53c6252e7721d1d4">CUDL_ADD_BITWISE_NOT_OP</a></div><div class="ttdeci">#define CUDL_ADD_BITWISE_NOT_OP(_name, _op_name)</div><div class="ttdoc">Add the bitwise not operator for a given unit.</div><div class="ttdef"><b>Definition:</b> cudl.h:223</div></div>
+<div class="ttc" id="acudl_8h_html_a59661ca75f8ca4b147b1fc96c01abdc2"><div class="ttname"><a href="cudl_8h.html#a59661ca75f8ca4b147b1fc96c01abdc2">__CUDL_UT</a></div><div class="ttdeci">#define __CUDL_UT(_name)</div><div class="ttdoc">Utility macro meant to easily rebuild the type name associated to the unit name. For internal use onl...</div><div class="ttdef"><b>Definition:</b> cudl.h:41</div></div>
+<div class="ttc" id="acudl_8h_html_a7ff2210fdc5a212ec5f8dd84d53721ad"><div class="ttname"><a href="cudl_8h.html#a7ff2210fdc5a212ec5f8dd84d53721ad">CUDL_ADD_CONVERSION_FRACTION_FACTOR</a></div><div class="ttdeci">#define CUDL_ADD_CONVERSION_FRACTION_FACTOR(_from, __to, _n, _d)</div><div class="ttdoc">Simplified version of the CUDL_ADD_EXPLICIT_CONVERSION_FRACTION_FACTOR to have a default explicative.</div><div class="ttdef"><b>Definition:</b> cudl.h:125</div></div>
+<div class="ttc" id="acudl_8h_html_a1aa0021c58ba71b3782777076301c132"><div class="ttname"><a href="cudl_8h.html#a1aa0021c58ba71b3782777076301c132">CUDL_ADD_CONVERSION_FACTOR</a></div><div class="ttdeci">#define CUDL_ADD_CONVERSION_FACTOR(_from, _to, _factor)</div><div class="ttdoc">Simplified version of the CUDL_ADD_CONVERSION_FRACTION_FACTOR to have a default divider of 1....</div><div class="ttdef"><b>Definition:</b> cudl.h:135</div></div>
+<div class="ttc" id="acudl_8h_html_acb317e26b1d7f5854766c2177e537023"><div class="ttname"><a href="cudl_8h.html#acb317e26b1d7f5854766c2177e537023">CUDL_ADD_COMMON_OPERATORS</a></div><div class="ttdeci">#define CUDL_ADD_COMMON_OPERATORS(_name, _type)</div><div class="ttdoc">Helper macro to add operators that are supported by all types.</div><div class="ttdef"><b>Definition:</b> cudl.h:234</div></div>
+<div class="ttc" id="acudl_8h_html_a61a4aac603a2f8de9be5f581f63ae176"><div class="ttname"><a href="cudl_8h.html#a61a4aac603a2f8de9be5f581f63ae176">__CUDL_AP</a></div><div class="ttdeci">#define __CUDL_AP(_s)</div><div class="ttdoc">Utility macro to append CUDL_PREFIX at the beginning of the given token. For internal use only.</div><div class="ttdef"><b>Definition:</b> cudl.h:37</div></div>
+<div class="ttc" id="acudl_8h_html_a35c115838fe3056993f9f61785499503"><div class="ttname"><a href="cudl_8h.html#a35c115838fe3056993f9f61785499503">CUDL_ADD_UNIT</a></div><div class="ttdeci">#define CUDL_ADD_UNIT(_name, _type)</div><div class="ttdoc">Function to add a unit.</div><div class="ttdef"><b>Definition:</b> cudl.h:81</div></div>
+<div class="ttc" id="acudl_8h_html_a6cd9fa2278af9010f525d4b77f237b52"><div class="ttname"><a href="cudl_8h.html#a6cd9fa2278af9010f525d4b77f237b52">CUDL_ADD_RELATIONAL_OP</a></div><div class="ttdeci">#define CUDL_ADD_RELATIONAL_OP(_name, _op_name, _op)</div><div class="ttdoc">Macro to add a relational operation (==, !=, &gt;, &gt;=, &lt;, &lt;=). The result of these operations is always ...</div><div class="ttdef"><b>Definition:</b> cudl.h:204</div></div>
+<div class="ttc" id="acudl_8h_html_a329958c66e24b83685e08ed5591a1739"><div class="ttname"><a href="cudl_8h.html#a329958c66e24b83685e08ed5591a1739">CUDL_ADD_NO_TRANSFORM_OP</a></div><div class="ttdeci">#define CUDL_ADD_NO_TRANSFORM_OP(_name, _op_name, _op)</div><div class="ttdoc">Macro to add an operation that has a left hand side and right side of the same type and does not chan...</div><div class="ttdef"><b>Definition:</b> cudl.h:155</div></div>
+<div class="ttc" id="acudl_8h_html_a0c556a7eebde8f1ca4880e4a53380f4c"><div class="ttname"><a href="cudl_8h.html#a0c556a7eebde8f1ca4880e4a53380f4c">CUDL_GET</a></div><div class="ttdeci">#define CUDL_GET(_value)</div><div class="ttdoc">Utility macro to access the underlying value when usage requires to interact with non cudl variables.</div><div class="ttdef"><b>Definition:</b> cudl.h:87</div></div>
+<div class="ttc" id="acudl_8h_html_aa24251ce4017c8633f5f559ffd0f66fa"><div class="ttname"><a href="cudl_8h.html#aa24251ce4017c8633f5f559ffd0f66fa">__CUDL_L1STR</a></div><div class="ttdeci">#define __CUDL_L1STR(_p, _s)</div><div class="ttdoc">Level 1 stringification macro. For internal use only.</div><div class="ttdef"><b>Definition:</b> cudl.h:33</div></div>
+<div class="ttc" id="acudl_8h_html_aae7c70a3211ee874af29223e08d7f437"><div class="ttname"><a href="cudl_8h.html#aae7c70a3211ee874af29223e08d7f437">CUDL_ADD_UNIT_WITH_OP</a></div><div class="ttdeci">#define CUDL_ADD_UNIT_WITH_OP(_name, _type, _op)</div><div class="ttdoc">Function to add a unit.</div><div class="ttdef"><b>Definition:</b> cudl.h:61</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

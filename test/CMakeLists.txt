@@ -10,7 +10,7 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_executable(${PROJECT_NAME} cudl_test.cpp cudl_prefix_test.cpp cudl_no_prefix_test.cpp)
+add_executable(${PROJECT_NAME} cudl_integer_test.cpp cudl_prefix_test.cpp cudl_no_prefix_test.cpp cudl_float_test.cpp)
 target_link_libraries(${PROJECT_NAME} cudl::lib GTest::gtest_main)
 
 include(GoogleTest)
